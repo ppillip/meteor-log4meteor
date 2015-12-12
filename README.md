@@ -2,9 +2,24 @@
 
 meteor add ppillip:log4meteor 
 
-서버에 옵션 주기
+### 서버 로그 옵션
+
+디비에 남기기
+
+```js
 if (Meteor.isServer) {
   Meteor.startup(function () {
     log4MeteorServerConfig.type = "db";
   });
 }
+```
+
+콘솔에 남기기
+
+```js
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+    log4MeteorServerConfig.type = "console";
+  });
+}
+```
